@@ -5,7 +5,7 @@ import { UsersRound, Sun, Moon } from "lucide-react";
 
 export default function DesignSystemPage() {
   const [accordionOpen, setAccordionOpen] = useState({});
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const toggleAccordion = (id) => {
     setAccordionOpen((prev) => ({
@@ -15,7 +15,7 @@ export default function DesignSystemPage() {
   };
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
   }, []);
 

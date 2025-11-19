@@ -4,12 +4,13 @@
    CSS VARIABLES - COLORS & THEME
    ============================================ */
 
-/* Light Theme */
+/* Light Theme (Default) */
+:root,
 :root[data-theme="light"] {
   /* Primary Color - Claude UI */
-  --color-primary: #40C2BD;
-  --color-primary-light: #6BD4D0;
-  --color-primary-darker: #2A8B87;
+  --color-primary: #40c2bd;
+  --color-primary-light: #6bd4d0;
+  --color-primary-darker: #2a8b87;
   --color-primary-alpha-15: rgba(64, 194, 189, 0.15);
 
   /* Secondary Colors */
@@ -41,13 +42,12 @@
   --color-info: #3b82f6;
 }
 
-/* Dark Theme (Default) */
-:root,
+/* Dark Theme */
 :root[data-theme="dark"] {
   /* Primary Color - Claude UI */
-  --color-primary: #40C2BD;
-  --color-primary-light: #E0F7F6;
-  --color-primary-darker: #2A8B87;
+  --color-primary: #40c2bd;
+  --color-primary-light: #e0f7f6;
+  --color-primary-darker: #2a8b87;
   --color-primary-alpha-15: rgba(64, 194, 189, 0.15);
 
   /* Secondary Colors */
@@ -159,6 +159,11 @@ body {
 
 button:hover {
   filter: brightness(90%);
+}
+
+button {
+  max-height: 44px !important;
+  min-height: 44px;
 }
 
 /* ============================================
@@ -308,8 +313,6 @@ button:hover {
    ACCORDION
    ============================================ */
 .accordion {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -326,13 +329,15 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 0rem;
+  margin-bottom: 1rem;
   background: transparent;
   border: none;
   color: var(--color-text);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
+  border-bottom: 2px solid var(--color-border);
 }
 
 .accordion-content {
@@ -590,7 +595,7 @@ button:hover {
 .flex-col-gap-md {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 1rem;
 }
 
 .flex-col-gap-lg {
@@ -756,4 +761,155 @@ button:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* AQUI ACABA LAS CLASES DEL DESIGN GENERAL */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* ============================================
+   LAYOUT - PAGE WITH SIDEBAR
+   ============================================ */
+.page-layout-sidebar {
+  display: flex;
+  min-height: 100dvh;
+  width: 100%;
+}
+
+.page-main-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.page-sidebar {
+  width: 20.625rem;
+  background: white;
+  border-left: 1px solid var(--color-border);
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   SIDEBAR - FIXED HEADER
+   ============================================ */
+.sidebar-fixed-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-header-icons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.sidebar-icon-btn {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.sidebar-icon-btn-delete {
+  color: var(--color-error);
+}
+
+/* ============================================
+   SIDEBAR - SCROLLABLE CONTENT
+   ============================================ */
+.sidebar-scrollable-content {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-btn-save {
+  width: 100%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.sidebar-btn-show {
+  width: 100%;
+  background: var(--color-warning);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* ============================================
+   SIDEBAR - PAIRS
+   ============================================ */
+.sidebar-pair-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-pair-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sidebar-pair-input-wrapper {
+  flex: 1;
+}
+
+.sidebar-pair-delete-btn {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-error);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  align-self: end;
+}
+
+.sidebar-section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
 }
