@@ -5,6 +5,7 @@ import {
   ChevronLeft,
   ChevronUp,
   ChevronDown,
+  ChevronRight,
   Trash2,
   Save,
   Lightbulb,
@@ -84,7 +85,7 @@ export default function Home() {
                 aria-expanded={instructionsOpen}
               >
                 <span>Instrucciones</span>
-                <span className="accordion-icon">▼</span>
+                {instructionsOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
               {instructionsOpen && (
                 <div className="accordion-content">
@@ -107,7 +108,7 @@ export default function Home() {
                 aria-expanded={paresOpen}
               >
                 <span>Pares</span>
-                <span className="accordion-icon">▼</span>
+                {paresOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
               {paresOpen && (
                 <div className="accordion-content">
@@ -174,7 +175,7 @@ export default function Home() {
                 aria-expanded={configOpen}
               >
                 <span>Configuración</span>
-                <span className="accordion-icon">▼</span>
+                {configOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
               {configOpen && (
                 <div className="accordion-content">
@@ -211,7 +212,7 @@ export default function Home() {
                 aria-expanded={instructionsOpen}
               >
                 <span>Instrucciones</span>
-                <span className="accordion-icon">▼</span>
+                {instructionsOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
               {instructionsOpen && (
                 <div className="accordion-content">
@@ -234,7 +235,7 @@ export default function Home() {
                 aria-expanded={paresOpen}
               >
                 <span>Pares</span>
-                <span className="accordion-icon">▼</span>
+                {paresOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
               {paresOpen && (
                 <div className="accordion-content">
@@ -301,7 +302,7 @@ export default function Home() {
                 aria-expanded={configOpen}
               >
                 <span>Configuración</span>
-                <span className="accordion-icon">▼</span>
+                {configOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
               </button>
               {configOpen && (
                 <div className="accordion-content">
