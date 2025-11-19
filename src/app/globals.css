@@ -158,7 +158,7 @@ body {
 }
 
 button:hover {
-  filter: brightness(95%);
+  filter: brightness(90%);
 }
 
 /* ============================================
@@ -182,7 +182,7 @@ button:hover {
 
 .btn:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .btn-primary {
@@ -420,7 +420,7 @@ button:hover {
 
 .badge-primary {
   background: var(--color-primary-alpha-15);
-  color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
 .badge-secondary {
