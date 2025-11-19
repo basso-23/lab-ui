@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { UsersRound } from "lucide-react";
+import { useState, useEffect } from "react";
+import { UsersRound, Sun, Moon } from "lucide-react";
 
 export default function DesignSystemPage() {
   const [accordionOpen, setAccordionOpen] = useState({});
+  const [theme, setTheme] = useState("dark");
 
   const toggleAccordion = (id) => {
     setAccordionOpen((prev) => ({
@@ -13,8 +14,36 @@ export default function DesignSystemPage() {
     }));
   };
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    setTheme(savedTheme);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <div>
+      {/* Navbar */}
+      <nav className="design-navbar">
+        <div className="design-navbar-content">
+          <h1 className="design-navbar-title">Design System</h1>
+          <button
+            className="design-navbar-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+        </div>
+      </nav>
+
       {/* Typography Section */}
       <section className="section-alternate">
         <div className="section-content-split">

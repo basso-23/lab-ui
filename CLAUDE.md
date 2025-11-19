@@ -92,6 +92,16 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
    - Los emojis varían según el sistema operativo
    - Lucide ofrece miles de iconos profesionales
 
+9. **Propiedades CSS Prohibidas**: **NUNCA** usar las siguientes propiedades en CSS
+   - **Prohibido**: `transition`, `:hover`, `:active`, `box-shadow`
+   - **Correcto**: Crear estilos estáticos sin animaciones ni efectos interactivos
+
+   **Razones:**
+   - Se busca un diseño minimalista y sin distracciones
+   - Las animaciones pueden afectar el rendimiento
+   - Mantiene consistencia visual en todo el proyecto
+   - Simplifica el código CSS
+
 ### Ejemplo de Uso
 
 **Antes (Tailwind):**
@@ -163,6 +173,7 @@ className="settings-card"
 - ❌ No ejecutar `npm run build` o `npm run dev`
 - ❌ **NUNCA usar estilos inline** `style={{...}}`
 - ❌ **NUNCA usar emojis**, usar iconos de Lucide
+- ❌ **NUNCA usar en CSS**: `transition`, `:hover`, `:active`, `box-shadow`
 - ✅ Usar clases CSS semánticas, no Tailwind inline
 - ✅ Usar iconos de lucide-react para todos los iconos
 - ✅ Medidas: rem (general), dvh (viewport height), vw (viewport width), px (media queries)

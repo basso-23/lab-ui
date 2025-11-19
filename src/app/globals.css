@@ -3,7 +3,58 @@
 /* ============================================
    CSS VARIABLES - COLORS & THEME
    ============================================ */
-:root {
+
+/* Light Theme */
+:root[data-theme="light"] {
+  /* Primary Color - Claude UI */
+  --color-primary: #057af0;
+  --color-primary-light: #3b9eff;
+  --color-primary-dark: #0461c7;
+  --color-primary-darker: #034a8f;
+  --color-primary-alpha-10: rgba(5, 122, 240, 0.1);
+  --color-primary-alpha-15: rgba(5, 122, 240, 0.15);
+  --color-primary-alpha-20: rgba(5, 122, 240, 0.2);
+  --color-primary-alpha-30: rgba(5, 122, 240, 0.3);
+  --color-primary-alpha-50: rgba(5, 122, 240, 0.5);
+  --color-primary-alpha-70: rgba(5, 122, 240, 0.7);
+
+  /* Secondary Colors */
+  --color-secondary: #8b5cf6;
+  --color-secondary-light: #a78bfa;
+  --color-secondary-dark: #7c3aed;
+  --color-secondary-alpha-15: rgba(139, 92, 246, 0.15);
+
+  /* Neutral Colors - Light Theme */
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-surface-hover: #e5e5e5;
+  --color-border: #e5e5e5;
+  --color-text: #171717;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+  --color-white-alpha-02: rgba(0, 0, 0, 0.02);
+
+  /* Semantic Colors */
+  --color-success: #22c55e;
+  --color-success-light: #16a34a;
+  --color-success-alpha-10: rgba(34, 197, 94, 0.1);
+  --color-success-alpha-15: rgba(34, 197, 94, 0.15);
+  --color-warning: #f59e0b;
+  --color-warning-light: #d97706;
+  --color-warning-alpha-10: rgba(245, 158, 11, 0.1);
+  --color-warning-alpha-15: rgba(245, 158, 11, 0.15);
+  --color-error: #ef4444;
+  --color-error-light: #dc2626;
+  --color-error-alpha-10: rgba(239, 68, 68, 0.1);
+  --color-error-alpha-15: rgba(239, 68, 68, 0.15);
+  --color-info: #3b82f6;
+  --color-info-light: #2563eb;
+  --color-info-alpha-10: rgba(59, 130, 246, 0.1);
+}
+
+/* Dark Theme (Default) */
+:root,
+:root[data-theme="dark"] {
   /* Primary Color - Claude UI */
   --color-primary: #057af0;
   --color-primary-light: #edf2fe;
@@ -22,7 +73,7 @@
   --color-secondary-dark: #7c3aed;
   --color-secondary-alpha-15: rgba(139, 92, 246, 0.15);
 
-  /* Neutral Colors */
+  /* Neutral Colors - Dark Theme */
   --color-background: #171717;
   --color-surface: #262626;
   --color-surface-hover: #333333;
@@ -143,6 +194,10 @@ body {
   border-radius: var(--radius-sm);
 }
 
+button:hover {
+  filter: brightness(95%);
+}
+
 /* ============================================
    BUTTONS
    ============================================ */
@@ -173,20 +228,10 @@ body {
   border-color: var(--color-primary);
 }
 
-.btn-primary:hover:not(:disabled) {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-}
-
 .btn-secondary {
   background: var(--color-secondary);
   color: var(--color-text);
   border-color: var(--color-secondary);
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background: var(--color-secondary-dark);
-  border-color: var(--color-secondary-dark);
 }
 
 .btn-outline {
@@ -195,19 +240,10 @@ body {
   border-color: var(--color-primary);
 }
 
-.btn-outline:hover:not(:disabled) {
-  background: var(--color-primary);
-  color: var(--color-background);
-}
-
 .btn-ghost {
   background: transparent;
   color: var(--color-text);
   border-color: transparent;
-}
-
-.btn-ghost:hover:not(:disabled) {
-  background: var(--color-surface);
 }
 
 .btn-link {
@@ -216,10 +252,6 @@ body {
   border-color: transparent;
   text-decoration: underline;
   padding: 0;
-}
-
-.btn-link:hover:not(:disabled) {
-  color: var(--color-primary-light);
 }
 
 /* ============================================
@@ -366,10 +398,6 @@ body {
   font-size: 0.9375rem;
   font-weight: 500;
   cursor: pointer;
-}
-
-.accordion-trigger:hover {
-  background: var(--color-surface-hover);
 }
 
 .accordion-content {
@@ -891,10 +919,6 @@ body {
   border-radius: var(--radius-sm);
 }
 
-.feature-card:hover {
-  border-color: var(--color-primary);
-}
-
 .feature-icon {
   width: 3rem;
   height: 3rem;
@@ -1006,10 +1030,6 @@ body {
   border-radius: var(--radius-sm);
 }
 
-.showcase-item:hover {
-  border-color: var(--color-primary);
-}
-
 .showcase-label {
   font-size: 0.875rem;
   font-weight: 500;
@@ -1020,10 +1040,6 @@ body {
 /* ============================================
    ENHANCED CARDS
    ============================================ */
-
-.card-hover:hover {
-  border-color: var(--color-primary);
-}
 
 /* ============================================
    DIVIDER
@@ -1037,4 +1053,44 @@ body {
 .divider-lg {
   height: 1px;
   background: var(--color-border);
+}
+
+/* ============================================
+   NAVBAR - DESIGN SYSTEM
+   ============================================ */
+.design-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(0.5rem);
+}
+
+.design-navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.design-navbar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.design-navbar-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
