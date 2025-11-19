@@ -25,7 +25,8 @@ export default function Home() {
     {
       id: 2,
       term: "Country",
-      description: "The land outside of cities, often with farms and many trees.",
+      description:
+        "The land outside of cities, often with farms and many trees.",
     },
   ]);
   const [gridSize, setGridSize] = useState("15 × 15");
@@ -41,23 +42,27 @@ export default function Home() {
       <aside className="page-sidebar">
         {/* Fixed Header - Always Visible */}
         <div className="sidebar-fixed-header">
-          {/* Icon Buttons Row */}
-          <div className="sidebar-header-icons">
-            <button className="sidebar-icon-btn" aria-label="Back">
-              <ChevronLeft size={20} />
-            </button>
-            <button className="sidebar-icon-btn" aria-label="Move up">
-              <ChevronUp size={20} />
-            </button>
-            <button className="sidebar-icon-btn" aria-label="Move down">
-              <ChevronDown size={20} />
-            </button>
-            <button
-              className="sidebar-icon-btn sidebar-icon-btn-delete"
-              aria-label="Delete"
-            >
-              <Trash2 size={20} />
-            </button>
+          <div className="fixed-sidebar">
+            <div className="left-fixed-sidebar">
+              <button className="sidebar-icon-btn" aria-label="Back">
+                <ChevronLeft size={20} />
+              </button>
+            </div>
+
+            <div className="right-fixed-sidebar">
+              <button className="sidebar-icon-btn" aria-label="Move up">
+                <ChevronUp size={20} />
+              </button>
+              <button className="sidebar-icon-btn" aria-label="Move down">
+                <ChevronDown size={20} />
+              </button>
+              <button
+                className="sidebar-icon-btn sidebar-icon-btn-delete"
+                aria-label="Delete"
+              >
+                <Trash2 size={18} />
+              </button>
+            </div>
           </div>
 
           {/* Save Button */}
