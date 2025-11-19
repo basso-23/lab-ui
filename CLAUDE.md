@@ -73,6 +73,25 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
    - No respetan el sistema de diseño
    - Hacen que el código JSX sea menos legible
 
+8. **Iconos**: Usar **lucide-react** para todos los iconos
+   - **Prohibido**: Usar emojis (👥, 🎨, ⚙️, etc.)
+   - **Correcto**: Importar y usar componentes de Lucide
+
+   **Ejemplo:**
+   ```jsx
+   import { Users, Settings, Palette } from 'lucide-react';
+
+   <button className="btn-icon">
+     <Users size={20} />
+   </button>
+   ```
+
+   **Razones:**
+   - Los iconos de Lucide son vectoriales y escalables
+   - Mantienen consistencia visual en todo el proyecto
+   - Los emojis varían según el sistema operativo
+   - Lucide ofrece miles de iconos profesionales
+
 ### Ejemplo de Uso
 
 **Antes (Tailwind):**
@@ -143,7 +162,9 @@ className="settings-card"
 
 - ❌ No ejecutar `npm run build` o `npm run dev`
 - ❌ **NUNCA usar estilos inline** `style={{...}}`
+- ❌ **NUNCA usar emojis**, usar iconos de Lucide
 - ✅ Usar clases CSS semánticas, no Tailwind inline
+- ✅ Usar iconos de lucide-react para todos los iconos
 - ✅ Medidas: rem (general), dvh (viewport height), vw (viewport width), px (media queries)
 - ✅ Nomenclatura: `[componente]-[elemento]-[modificador]`
 - ✅ Organizar CSS con comentarios por secciones

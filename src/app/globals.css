@@ -6,10 +6,15 @@
 :root {
   /* Primary Color - Claude UI */
   --color-primary: #057af0;
-  --color-primary-light: #4a9ff5;
+  --color-primary-light: #edf2fe;
   --color-primary-dark: #0461c7;
+  --color-primary-darker: #034a8f;
   --color-primary-alpha-10: rgba(5, 122, 240, 0.1);
   --color-primary-alpha-15: rgba(5, 122, 240, 0.15);
+  --color-primary-alpha-20: rgba(5, 122, 240, 0.2);
+  --color-primary-alpha-30: rgba(5, 122, 240, 0.3);
+  --color-primary-alpha-50: rgba(5, 122, 240, 0.5);
+  --color-primary-alpha-70: rgba(5, 122, 240, 0.7);
 
   /* Secondary Colors */
   --color-secondary: #8b5cf6;
@@ -59,11 +64,6 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-
-  /* Transitions */
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 250ms ease-in-out;
-  --transition-slow: 350ms ease-in-out;
 }
 
 body {
@@ -157,7 +157,7 @@ body {
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all var(--transition-fast);
+
   white-space: nowrap;
   user-select: none;
 }
@@ -220,6 +220,84 @@ body {
 
 .btn-link:hover:not(:disabled) {
   color: var(--color-primary-light);
+}
+
+/* ============================================
+   BUTTON VARIANTS - ICON BUTTONS
+   ============================================ */
+.btn-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-icon-primary-solid {
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+.btn-icon-primary-light-solid {
+  background: var(--color-primary-light);
+  color: var(--color-background);
+}
+
+.btn-icon-primary-dark-solid {
+  background: var(--color-primary-dark);
+  color: var(--color-text);
+}
+
+.btn-icon-primary-alpha-solid {
+  background: var(--color-primary-alpha-20);
+  color: var(--color-text);
+}
+
+.btn-icon-primary-alpha-solid-light {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-darker);
+}
+
+.btn-icon-primary-light {
+  background: transparent;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.btn-icon-primary-light-outline {
+  background: transparent;
+  color: var(--color-primary-light);
+  border: 2px solid var(--color-primary-light);
+}
+
+.btn-icon-primary-dark-outline {
+  background: transparent;
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary-dark);
+}
+
+.btn-icon-primary-alpha-outline {
+  background: transparent;
+  color: var(--color-primary-alpha-70);
+  border: 2px solid var(--color-primary-alpha-70);
+}
+
+.button-variants-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.button-variants-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* ============================================
@@ -288,19 +366,10 @@ body {
   font-size: 0.9375rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background var(--transition-fast);
 }
 
 .accordion-trigger:hover {
   background: var(--color-surface-hover);
-}
-
-.accordion-icon {
-  transition: transform var(--transition-fast);
-}
-
-.accordion-trigger[aria-expanded="true"] .accordion-icon {
-  transform: rotate(180deg);
 }
 
 .accordion-content {
@@ -334,14 +403,12 @@ body {
   color: var(--color-text);
   font-size: 0.875rem;
   font-family: inherit;
-  transition: all var(--transition-fast);
 }
 
 .input:focus,
 .textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px var(--color-primary-alpha-10);
 }
 
 .input:disabled,
@@ -358,7 +425,6 @@ body {
 .input-error:focus,
 .textarea-error:focus {
   border-color: var(--color-error);
-  box-shadow: 0 0 0 3px var(--color-error-alpha-10);
 }
 
 .input-helper {
@@ -476,7 +542,6 @@ body {
   border: 2px solid var(--color-border);
   background: var(--color-surface);
   cursor: pointer;
-  transition: all var(--transition-fast);
 }
 
 .checkbox {
@@ -496,7 +561,6 @@ body {
 .checkbox:focus,
 .radio:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primary-alpha-10);
 }
 
 .checkbox-label,
@@ -520,13 +584,11 @@ body {
   font-size: 0.875rem;
   font-family: inherit;
   cursor: pointer;
-  transition: all var(--transition-fast);
 }
 
 .select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px var(--color-primary-alpha-10);
 }
 
 /* ============================================
@@ -827,7 +889,6 @@ body {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  transition: all var(--transition-normal);
 }
 
 .feature-card:hover {
@@ -943,7 +1004,6 @@ body {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  transition: border-color var(--transition-fast);
 }
 
 .showcase-item:hover {
@@ -960,17 +1020,8 @@ body {
 /* ============================================
    ENHANCED CARDS
    ============================================ */
-.card-elevated {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card-hover {
-  transition: all var(--transition-normal);
-}
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   border-color: var(--color-primary);
 }
 

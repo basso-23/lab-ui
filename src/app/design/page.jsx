@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { UsersRound } from "lucide-react";
 
 export default function DesignSystemPage() {
   const [accordionOpen, setAccordionOpen] = useState({});
@@ -94,6 +95,53 @@ export default function DesignSystemPage() {
                 <div className="color-swatch-color bg-secondary"></div>
                 <div className="showcase-label mt-sm">Secondary</div>
                 <span className="text-caption">#8B5CF6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider-lg"></div>
+
+      {/* Button Variants Section */}
+      <section className="section-alternate">
+        <div className="section-content-split reverse">
+          <div className="section-text">
+            <h3>Button Variants</h3>
+            <p>
+              Our icon buttons come in multiple variants using the primary color
+              palette. Each variant maintains consistent sizing and spacing
+              while offering different visual weights.
+            </p>
+            <p>
+              Available in both solid and outline styles, these circular buttons
+              are perfect for actions, user avatars, or navigation elements.
+            </p>
+          </div>
+          <div className="section-preview">
+            <div className="button-variants-grid">
+              {/* Solid Variants */}
+              <div className="button-variants-row">
+                <button className="btn-icon btn-icon-primary-solid">V</button>
+                <button className="btn-icon btn-icon-primary-solid">BG</button>
+                <button className="btn-icon btn-icon-primary-solid">
+                  <UsersRound size={20} />
+                </button>
+                <button className="btn-icon btn-icon-primary-alpha-solid">
+                  <UsersRound size={20} />
+                </button>
+              </div>
+
+              {/* Outline Variants */}
+              <div className="button-variants-row">
+                <button className="btn-icon btn-icon-primary-light">V</button>
+                <button className="btn-icon btn-icon-primary-light">BG</button>
+                <button className="btn-icon btn-icon-primary-light">
+                  <UsersRound size={20} />
+                </button>
+                <button className="btn-icon btn-icon-primary-alpha-solid-light">
+                  <UsersRound size={20} />
+                </button>
               </div>
             </div>
           </div>
