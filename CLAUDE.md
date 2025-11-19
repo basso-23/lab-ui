@@ -22,9 +22,11 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
 1. **Ubicación**: Crear todas las clases en el archivo `globals.css` (o equivalente)
 
 2. **Nomenclatura Semántica**: Usar nombres que describan la función o posición del componente
+
    - Ejemplos: `.editor-header`, `.settings-card`, `.btn-primary`
 
 3. **Patrón de Nomenclatura**: `[componente]-[elemento]-[modificador]`
+
    ```
    .sidebar-nav-item
    .header-logo-container
@@ -32,6 +34,7 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
    ```
 
 4. **Organización del CSS**: Organizar por secciones con comentarios descriptivos
+
    ```css
    /* ============================================
       LAYOUT
@@ -51,6 +54,7 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
    ```
 
 5. **Variables CSS**: Usar CSS custom properties para colores y valores reutilizables
+
    ```css
    :root {
      --color-primary: #3b82f6;
@@ -64,39 +68,46 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
 6. **Documentación**: Todo debe estar documentado en este archivo (CLAUDE.md)
 
 7. **No Usar Estilos Inline**: **NUNCA** usar el atributo `style={{...}}` en componentes React
+
    - **Prohibido**: `style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}`
    - **Correcto**: Crear una clase CSS semántica en `globals.css`
 
    **Razones:**
+
    - Los estilos inline no son reutilizables
    - Dificultan el mantenimiento del código
    - No respetan el sistema de diseño
    - Hacen que el código JSX sea menos legible
 
 8. **Iconos**: Usar **lucide-react** para todos los iconos
+
    - **Prohibido**: Usar emojis (👥, 🎨, ⚙️, etc.)
    - **Correcto**: Importar y usar componentes de Lucide
 
    **Ejemplo:**
+
    ```jsx
-   import { Users, Settings, Palette } from 'lucide-react';
+   import { Users, Settings, Palette } from "lucide-react";
 
    <button className="btn-icon">
      <Users size={20} />
-   </button>
+   </button>;
    ```
 
    **Razones:**
+
    - Los iconos de Lucide son vectoriales y escalables
    - Mantienen consistencia visual en todo el proyecto
    - Los emojis varían según el sistema operativo
    - Lucide ofrece miles de iconos profesionales
 
 9. **Propiedades CSS Prohibidas**: **NUNCA** usar las siguientes propiedades en CSS
+
    - **Prohibido**: `transition`, `:hover`, `:active`, `box-shadow`
    - **Correcto**: Crear estilos estáticos sin animaciones ni efectos interactivos
 
    **Razones:**
+
    - Se busca un diseño minimalista y sin distracciones
    - Las animaciones pueden afectar el rendimiento
    - Mantiene consistencia visual en todo el proyecto
@@ -105,16 +116,19 @@ Usar **clases CSS personalizadas semánticas** en lugar de Tailwind CSS inline.
 ### Ejemplo de Uso
 
 **Antes (Tailwind):**
+
 ```jsx
-className="flex items-center gap-4 bg-white p-6 rounded-lg"
+className = "flex items-center gap-4 bg-white p-6 rounded-lg";
 ```
 
 **Después (CSS Semántico):**
+
 ```jsx
-className="settings-card"
+className = "settings-card";
 ```
 
 **En globals.css:**
+
 ```css
 .settings-card {
   display: flex;
@@ -124,6 +138,13 @@ className="settings-card"
   padding: 1.5rem;
   border-radius: 0.5rem;
 }
+```
+
+**Mensaje para cambiar colores**
+
+```
+en @src\app\globals.css coloca el primary color que sea #40C2BD y cambia los
+otros colores acorde
 ```
 
 ## Media Queries
@@ -152,6 +173,7 @@ className="settings-card"
 ```
 
 **Breakpoints comunes:**
+
 - `@media (max-width: 1536px)` - 2xl y menores
 - `@media (max-width: 1280px)` - xl y menores
 - `@media (max-width: 1024px)` - lg y menores

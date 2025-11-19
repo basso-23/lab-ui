@@ -7,10 +7,10 @@
 /* Light Theme */
 :root[data-theme="light"] {
   /* Primary Color - Claude UI */
-  --color-primary: #057af0;
-  --color-primary-light: #3b9eff;
-  --color-primary-darker: #034a8f;
-  --color-primary-alpha-15: rgba(5, 122, 240, 0.15);
+  --color-primary: #40C2BD;
+  --color-primary-light: #6BD4D0;
+  --color-primary-darker: #2A8B87;
+  --color-primary-alpha-15: rgba(64, 194, 189, 0.15);
 
   /* Secondary Colors */
   --color-secondary: #8b5cf6;
@@ -45,10 +45,10 @@
 :root,
 :root[data-theme="dark"] {
   /* Primary Color - Claude UI */
-  --color-primary: #057af0;
-  --color-primary-light: #edf2fe;
-  --color-primary-darker: #034a8f;
-  --color-primary-alpha-15: rgba(5, 122, 240, 0.15);
+  --color-primary: #40C2BD;
+  --color-primary-light: #E0F7F6;
+  --color-primary-darker: #2A8B87;
+  --color-primary-alpha-15: rgba(64, 194, 189, 0.15);
 
   /* Secondary Colors */
   --color-secondary: #8b5cf6;
