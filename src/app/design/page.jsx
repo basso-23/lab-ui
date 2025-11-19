@@ -45,7 +45,7 @@ export default function DesignSystemPage() {
       </nav>
 
       {/* Typography Section */}
-      <section className="section-alternate">
+      <section className="section-alternate !border-0">
         <div className="section-content-split">
           <div className="section-text">
             <h3>Typography Scale</h3>
@@ -75,8 +75,6 @@ export default function DesignSystemPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-lg"></div>
 
       {/* Colors Section */}
       <section className="section-alternate">
@@ -130,8 +128,6 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
-      <div className="divider-lg"></div>
-
       {/* Button Variants Section */}
       <section className="section-alternate">
         <div className="section-content-split reverse">
@@ -177,8 +173,6 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
-      <div className="divider-lg"></div>
-
       {/* Buttons Section */}
       <section className="design-system-container">
         <div className="showcase-grid">
@@ -210,8 +204,6 @@ export default function DesignSystemPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-lg"></div>
 
       {/* Cards Section */}
       <section className="section-alternate">
@@ -342,8 +334,6 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
-      <div className="divider-lg"></div>
-
       {/* Accordion Section */}
       <section className="section-alternate">
         <div className="section-content-split reverse">
@@ -417,11 +407,7 @@ export default function DesignSystemPage() {
 
       {/* Badges & Alerts */}
       <section className="design-system-container">
-        <h2 className="design-system-section-title text-center">
-          Badges & Alerts
-        </h2>
-
-        <div className="grid-2 mt-xl">
+        <div className="grid-2">
           <div>
             <h4 className="text-h6 mb-md">Badge Variants</h4>
             <div className="flex-gap-sm">
