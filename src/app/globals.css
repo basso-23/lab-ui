@@ -317,7 +317,6 @@ button {
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--color-border);
 }
 
 .accordion-item:last-child {
@@ -796,11 +795,11 @@ button {
   z-index: 10;
   background: white;
   border-bottom: 1px solid var(--color-border);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  height: 129px;
+  height: 114px;
 }
 
 .sidebar-icon-btn {
@@ -830,7 +829,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: 129px;
+  margin-top: 114px;
 }
 
 .sidebar-btn-save {
@@ -863,6 +862,7 @@ button {
   font-weight: 500;
   font-size: 0.875rem;
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 /* ============================================
