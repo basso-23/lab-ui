@@ -41,7 +41,7 @@ export default function Home() {
       </div>
 
       {/* Sidebar */}
-      <aside className="page-sidebar">
+      <div className="page-sidebar">
         {/* Fixed Header - Always Visible */}
         <div className="sidebar-fixed-header">
           <div className="fixed-sidebar">
@@ -85,7 +85,11 @@ export default function Home() {
                 aria-expanded={instructionsOpen}
               >
                 <span>Instrucciones</span>
-                {instructionsOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {instructionsOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
               {instructionsOpen && (
                 <div className="accordion-content">
@@ -108,7 +112,11 @@ export default function Home() {
                 aria-expanded={paresOpen}
               >
                 <span>Pares</span>
-                {paresOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {paresOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
               {paresOpen && (
                 <div className="accordion-content">
@@ -175,7 +183,11 @@ export default function Home() {
                 aria-expanded={configOpen}
               >
                 <span>Configuración</span>
-                {configOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {configOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
               {configOpen && (
                 <div className="accordion-content">
@@ -212,7 +224,11 @@ export default function Home() {
                 aria-expanded={instructionsOpen}
               >
                 <span>Instrucciones</span>
-                {instructionsOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {instructionsOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
               {instructionsOpen && (
                 <div className="accordion-content">
@@ -235,7 +251,11 @@ export default function Home() {
                 aria-expanded={paresOpen}
               >
                 <span>Pares</span>
-                {paresOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {paresOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
               {paresOpen && (
                 <div className="accordion-content">
@@ -302,7 +322,11 @@ export default function Home() {
                 aria-expanded={configOpen}
               >
                 <span>Configuración</span>
-                {configOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                {configOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
               </button>
               {configOpen && (
                 <div className="accordion-content">
@@ -330,7 +354,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </aside>
+      </div>
     </div>
   );
 }
